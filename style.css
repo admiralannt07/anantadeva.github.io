@@ -1,0 +1,582 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #0C0C0D;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #b3b3b3;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+/* Header and Navigation */
+header {
+    padding: 20px 0;
+    background-color: None;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    z-index: 9999;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    background-color: #131313;
+    border-radius: 30px;
+    padding: 10px 20px;
+    gap: 20px;
+    position: relative;
+    border: 5px solid transparent;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar li a {
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: 200;
+    padding: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar::after, .navbar::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    z-index: -1;
+    background: conic-gradient(from var(--angle), transparent 20%, #ffffff);
+    border-radius: 30px;
+    animation: spin 3s linear infinite;
+}
+
+.navbar::before {
+    filter: blur(1rem);
+    opacity: 0.5;
+}
+
+.navbar li a:hover {
+    color: #B292FF;
+    transition: all 0.3s ease-in;
+}
+
+.navbar li a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #B292FF;
+    border-radius: 2px;
+}
+
+/* Introduction Section */
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.intro-text {
+    padding-left: 17%;
+    max-width: 600px;
+}
+
+.intro-text p {
+    color: #6F6F6F;
+}
+
+.highlight-text {
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.intro h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.intro p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.intro button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #0C0C0D;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.intro button:hover {
+    background-color: #B292FF;
+    color: #ffffff;
+    transition: all .5s ease 0s;
+}
+
+.intro a {
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+    padding-left: 5%;
+    margin-top: 10px;
+    color: #B292FF;
+    font-size: 0.9em;
+    transition: color 0.3s ease-in-out;
+}
+
+.intro a:hover {
+    color: #ffffff;
+}
+
+.intro-photo {
+    padding-right: 10%;
+}
+
+.intro-profile {
+    mask-image: linear-gradient(black, transparent);
+    max-width: 450px;
+    height: 100%;
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+#skills {
+    padding: 50px;
+    background-color: #0C0C0D;
+    padding-left: 10%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;  /* Center the entire section horizontally */
+    align-items: center;      /* Center content vertically */
+    gap: 20px;                /* Adjust or remove gap as needed */
+}
+
+.experience {
+    max-width: 25%;
+    text-align: center;       /* Center the text inside the experience section */
+    position: relative;
+    z-index: 1;
+}
+
+.experience::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;            /* Adjust the size of the circle as needed */
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.1); /* Light color for glow */
+    border-radius: 50%;
+    filter: blur(50px);      /* Blurring effect */
+    z-index: -1;             /* Ensure it stays behind the content */
+}
+
+.experience p {
+    font-size: 1.2em;
+    margin: 0;
+    color: #6F6F6F;
+}
+
+.experience span.xp-text {
+    color: #ffffff;
+    font-size: 4rem;
+}
+
+.skills-carousel {
+    display: flex;
+    overflow-x: auto;
+    flex-grow: 1;
+    justify-content: center; /* Align cards to the left inside the carousel */
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE 10+ */
+}
+
+.skills-carousel::-webkit-scrollbar {
+    display: none;               /* Chrome, Safari, Opera */
+}
+
+.skill-card {
+    background-color: #272727;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-right: 20px;
+    min-width: 200px;
+    flex-shrink: 0;
+}
+
+
+.skill-card i {
+    color: #B292FF;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    font-size: 1em;
+    color: #ffffff;
+    font-weight:700;
+    margin: 0;
+}
+
+.keywords {
+    position: relative;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 700;
+    padding: 50px;
+    z-index: -1;
+    background-color: #0C0C0D
+}
+
+.keywords p {
+    margin: 10px 0;
+    color: #B292FF;
+    z-index: 1;
+}
+
+.keywords::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;            /* Adjust the size of the circle as needed */
+    height: 390px;
+    background-color: rgba(160, 28, 255, 0.1); /* Light color for glow */
+    border-radius: 50%;
+    filter: blur(50px);      /* Blurring effect */
+    opacity: 0.35;
+    z-index: -1;             /* Ensure it stays behind the content */
+}
+
+.technologies {
+    padding: 40px;
+    text-align: center;
+}
+
+.tech-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: 200;
+}
+
+.tech-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.card {
+    background-color: #0C0C0D; /* Match the background color */
+    border-radius: 10px;
+    padding: 20px;
+    width: 220px;
+    text-align: left;
+    position: relative;
+}
+
+.card::after, .card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: conic-gradient(from var(--angle), transparent 50%, #ffffff);
+    border-radius: 10px;
+    animation: 2s spin linear infinite;
+}
+
+.card::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+.card h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #6F6F6F;
+}
+
+.card li i {
+    margin-right: 10px;
+    color: #A8A8A8;
+}
+
+.footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #131313;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer p {
+    font-family: 'Nunito', sans-serif;
+    color: #6F6F6F;
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    padding-left: 10%;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.footer a:hover {
+    color: #B292FF;
+}
+
+.footer a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #B292FF;
+    border-radius: 2px;
+    transition: width 0.3s ease 0s;
+}
+
+@keyframes spin{
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
+/* Responsive Design */
+@media (max-width:1280px) {
+    .intro h1 {
+        font-size: 2.5em;
+    }
+
+    .intro p {
+        font-size: 1.1em;
+    }
+
+    .intro-profile {
+        max-width: 350px;
+    }
+}
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 10px 15px;
+        gap: 15px;
+    }
+
+    .navbar li a {
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-text {
+        font-size: 1em;
+        padding-left: 0;
+        padding-bottom: 50px;
+    }
+
+    .intro-photo {
+        padding-right: 0;
+    }
+    
+    .intro-profile {
+        display: block;
+        max-width: 300px;
+        margin-top: 20px;
+    }
+
+    #skills {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 1em;
+    }
+
+    .experience {
+        max-width: 200px;
+        padding-bottom: 10%;
+    }
+
+    .experience span.xp-text {
+        font-size: 3.5rem;
+    }
+
+    .skills-carousel {
+        flex-direction: row;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .skill-card {
+        margin-right: 20px;
+    }
+
+    .keywords {
+        font-size: 2em;
+    }
+
+    .keywords::before {
+        width: 400px;
+        height: 400px;
+    }
+
+    .card li {
+        font-size: 0.8em;
+    }
+}
+@media (max-width: 640px) {
+
+    .navbar {
+        padding: 5px 10px;
+        gap: 10px;
+    }
+
+    .navbar li a {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-text {
+        font-size: .8em;
+        padding-left: 0;
+        padding-bottom: 50px;
+    }
+
+    .intro-photo {
+        padding-right: 0;
+    }
+    
+    .intro-profile {
+        display: block;
+        max-width: 250px;
+        margin-top: 20px;
+    }
+
+    #skills {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 0.8em;
+    }
+
+    .experience {
+        max-width: 200px;
+        padding-bottom: 10%;
+    }
+
+    .experience span.xp-text {
+        font-size: 3rem;
+    }
+
+    .skills-carousel {
+        flex-direction: row;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .skill-card {
+        margin-right: 20px;
+    }
+
+    .tech-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        justify-content: flex-start;
+        padding: 5px;
+    }
+
+    .navbar li a {
+        font-size: 0.7em;
+        padding: 6px;
+    }
+}
