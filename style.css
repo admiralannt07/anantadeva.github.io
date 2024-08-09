@@ -173,11 +173,12 @@ header nav {
 
 .intro-profile {
     mask-image: linear-gradient(black, transparent);
-    max-width: 450px;
+    max-width: 400px;
     height: 100%;
     mask-size: 100%;
     mask-repeat: no-repeat;
     mask-position: center;
+    border-radius: 50%
 }
 
 #skills {
