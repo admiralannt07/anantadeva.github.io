@@ -131,6 +131,7 @@ header nav {
 
 .intro p {
     font-size: 1.2em;
+    text-align: left;
     margin-bottom: 40px;
 }
 
@@ -442,6 +443,10 @@ header nav {
 
     .intro {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .intro p {
         text-align: center;
     }
 
