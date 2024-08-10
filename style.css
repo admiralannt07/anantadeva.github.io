@@ -1,4 +1,9 @@
 /* General Styling */
+:root {
+    --clr-bg: hsl(240, 4%, 5%);
+    --clr-neon: hsl(258, 100%, 79%);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,25 +12,24 @@
 
 body {
     font-family: 'Raleway', sans-serif;
-    background-color: #0C0C0D;
+    background-color: var(--clr-bg);
     color: #ffffff;
     line-height: 1.6;
 }
 
 a {
     text-decoration: none;
-    color: #b3b3b3;
-    transition: color 0.3s ease-in-out;
+    color: var(--clr-neon);
 }
 
 a:hover {
-    color: #ffffff;
+    color: var(--clr-neon);
 }
 
 /* Header and Navigation */
 header {
     padding: 20px 0;
-    background-color: None;
+    background-color: none;
     position: -webkit-sticky;
     position: sticky;
     top: 0px;
@@ -127,6 +131,7 @@ header nav {
     font-size: 3em;
     margin-bottom: 20px;
     font-weight: 500;
+    text-shadow: 0 0 0.2em hsl(0 0 100%);
 }
 
 .intro p {
@@ -135,36 +140,77 @@ header nav {
     margin-bottom: 40px;
 }
 
-.intro button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    background-color: #ffffff;
-    color: #0C0C0D;
+.intro-button {
+    display: inline-block;
     font-family: 'Nunito', sans-serif;
-    font-weight: bold;
-    font-size: 1em;
+    font-size: 1.1rem;
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    padding: 0.35em 1em;
+    border: var(--clr-neon) 0.125em solid;
+    color: var(--clr-neon);
+    border-radius: 1.1em;
+
+    text-shadow: 0 0 0.125em hsl(0 0 100% / 0.4), 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.3em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+
+    position: relative;
 }
 
-.intro button:hover {
-    background-color: #B292FF;
-    color: #ffffff;
-    transition: all .5s ease 0s;
+.intro-button::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr-neon);
+    top: 130%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(2.5em) rotateX(40deg) scale(1, 0.5);
+    filter: blur(1.5em);
+    opacity: 0.5;
 }
 
-.intro a {
+.intro-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.3em var(--clr-neon);
+    border-radius: 1.1em;
+    opacity: 0;
+    background: var(--clr-neon);
+    z-index: -1;
+    transition: opacity 150ms linear;
+}
+
+.intro-button:hover, .intro-button:focus {
+    color: var(--clr-bg);
+    text-shadow: 0 0 1em hsl(258, 100%, 87%);
+}
+
+.intro-button:hover::before, .intro-button:focus::before {
+    opacity: 0.8;
+}
+
+.intro-button:hover::after, .intro-button:focus::after{
+    opacity: 0.8;
+}
+
+.intro-xp {
     display: inline-block;
     font-family: 'Nunito', sans-serif;
     padding-left: 5%;
     margin-top: 10px;
     color: #B292FF;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     transition: color 0.3s ease-in-out;
 }
 
-.intro a:hover {
+.intro-xp:hover {
     color: #ffffff;
 }
 
@@ -184,7 +230,7 @@ header nav {
 
 #skills {
     padding: 50px;
-    background-color: #0C0C0D;
+    background-color: var(--clr-bg);
     padding-left: 10%;
     margin-right: 10px;
     display: flex;
@@ -208,9 +254,10 @@ header nav {
     transform: translate(-50%, -50%);
     width: 400px;            /* Adjust the size of the circle as needed */
     height: 200px;
-    background-color: rgba(255, 255, 255, 0.1); /* Light color for glow */
+    background-color: hsl(0, 0%, 50%); /* Light color for glow */
     border-radius: 50%;
-    filter: blur(50px);      /* Blurring effect */
+    filter: blur(5em);      /* Blurring effect */
+    opacity: 0.3;
     z-index: -1;             /* Ensure it stays behind the content */
 }
 
@@ -223,6 +270,7 @@ header nav {
 .experience span.xp-text {
     color: #ffffff;
     font-size: 4rem;
+    text-shadow: 0 0 0.1em hsl(0 0 100%);
 }
 
 .skills-carousel {
@@ -269,13 +317,26 @@ header nav {
     font-weight: 700;
     padding: 50px;
     z-index: -1;
-    background-color: #0C0C0D
+    background-color: var(--clr-bg)
 }
 
 .keywords p {
     margin: 10px 0;
-    color: #B292FF;
+    color: var(--clr-neon);
+    text-shadow: 0 0 0.5em hsl(258, 100%, 79%);
     z-index: 1;
+}
+
+.keywords .figma {
+    text-shadow: 0 0 0.5em #9F53FF;
+}
+
+.keywords .python {
+    text-shadow: 0 0 0.5em #6104D6;
+}
+
+.keywords .database {
+    text-shadow: 0 0 0.5em #370079;
 }
 
 .keywords::before {
@@ -302,6 +363,7 @@ header nav {
     font-size: 36px;
     margin-bottom: 40px;
     font-weight: 200;
+    text-shadow: 0 0 0.5em #ffffff;
 }
 
 .tech-cards {
@@ -312,7 +374,7 @@ header nav {
 }
 
 .card {
-    background-color: #0C0C0D; /* Match the background color */
+    background-color: var(--clr-bg); /* Match the background color */
     border-radius: 10px;
     padding: 20px;
     width: 220px;
@@ -342,6 +404,7 @@ header nav {
     font-size: 18px;
     margin-bottom: 15px;
     font-weight: 500;
+    text-shadow: 0 0 0.5em #ffffff, 0 0 0.2em #474747;
 }
 
 .card ul {
