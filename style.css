@@ -489,6 +489,10 @@ header nav {
         font-size: 1.1em;
     }
 
+    .intro-text {
+        padding-left: calc(15% - 1em);
+    }
+
     .intro-profile {
         max-width: 350px;
     }
