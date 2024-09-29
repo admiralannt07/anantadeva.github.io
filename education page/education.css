@@ -28,6 +28,7 @@ a {
 
 a:hover {
     color: var(--clr-neon);
+    transition: all 0.3s ease-in-out;
 }
 
 /* Header and Navigation */
@@ -164,6 +165,102 @@ section {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
 }
 
+.certificate-image {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out; /* Transition for fade */
+}
+
+.certificate-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.certificate-image.fade-in {
+    display: block;
+    opacity: 1;
+}
+
+.certificate-image.fade-out {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.unview-btn {
+    display: inline-block;
+    left: 37%;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.35em 1em;
+    border: var(--clr-neon) 0.125em solid;
+    color: var(--clr-neon);
+    border-radius: 1.1em;
+
+    text-shadow: 0 0 0.125em hsl(0 0 100% / 0.4), 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.3em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+
+    position: relative;
+    margin-top: 10px; /* Optional: adjust spacing */
+    text-align: center;
+    text-decoration: none; /* Remove underline for anchor tag */
+}
+
+.unview-btn::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr-neon);
+    top: 130%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(2.5em) rotateX(40deg) scale(1, 0.5);
+    filter: blur(1.5em);
+    opacity: 0.5;
+}
+
+.unview-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.3em var(--clr-neon);
+    border-radius: 1em;
+    opacity: 0;
+    background: var(--clr-neon);
+    z-index: -1;
+    transition: opacity 150ms linear;
+}
+
+.unview-btn:hover,
+.unview-btn:focus {
+    color: var(--clr-bg);
+    text-shadow: 0 0 1em hsl(258, 100%, 87%);
+}
+
+.unview-btn:hover::before,
+.unview-btn:focus::before {
+    opacity: 0.8;
+}
+
+.unview-btn:hover::after,
+.unview-btn:focus::after {
+    opacity: 0.8;
+}
+
 .education-item h3 {
     margin-bottom: 5px;
     font-size: 24px;
@@ -175,7 +272,7 @@ section {
 }
 
 .certificate-link {
-    color: #00d4c3;
+    color: #ffffff;
     text-decoration: none;
     font-size: 16px;
     position: absolute;
@@ -333,8 +430,17 @@ section {
         font-size: 20px;
     }
 
+    .certificate-image img {
+        width: 100%;
+        max-width: 100%;
+    }
+
     .certificate-link {
         font-size: 14px;
+    }
+
+    .unview-btn {
+        font-size: 12px;
     }
 
     .footer {
