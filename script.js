@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - skillsContainer.offsetLeft;
-        const walk = (x - startX) * 2; //scroll-fast
+        const walk = (x - startX) * 1.5; // Adjusted scroll speed for better control
         skillsContainer.scrollLeft = scrollLeft - walk;
     });
 });

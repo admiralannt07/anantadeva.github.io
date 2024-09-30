@@ -634,6 +634,14 @@ header nav {
         margin-top: 20px;
     }
 
+    .intro-button {
+        font-size: 0.9rem;
+    }
+
+    .intro-xp {
+        font-size: 0.8rem;
+    }
+
     #skills {
         flex-direction: column;
         align-items: center;
@@ -654,12 +662,21 @@ header nav {
         flex-direction: row;
         margin-left: 0;
         width: 100%;
+        overflow-x: auto; /* Ensure horizontal scroll works */
+        white-space: nowrap; /* Prevent cards from wrapping */
     }
 
     .skill-card {
         margin-right: 20px;
+        flex: 0 0 auto; /* Prevent shrinking and wrapping */
+        min-width: 150px; /* Ensure all skill cards fit */
+        max-width: 200px;
     }
 
+    .skill-card p {
+        font-size: 0.8em; /* Reduce font size for smaller screens */
+    }
+    
     .tech-cards {
         flex-direction: column;
         align-items: center;

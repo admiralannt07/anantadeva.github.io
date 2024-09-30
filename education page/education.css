@@ -483,6 +483,10 @@ section {
         margin-top: 10px;
     }
 
+    .unview-btn {
+        left: 0%;
+    }
+
     .footer {
         padding: 10px;
         flex-direction: column;
