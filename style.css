@@ -12,6 +12,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Accounts for fixed header */
 }
 
 body {
@@ -115,6 +116,7 @@ header nav {
     justify-content: space-between;
     align-items: center;
     padding: 50px;
+    min-height: 100vh;
 }
 
 .intro-text {

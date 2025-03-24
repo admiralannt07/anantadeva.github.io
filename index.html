@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -17,7 +18,7 @@
             <ul class="navbar">
                 <li><a href="">home</a></li>
                 <li><a href="/education page/education.html">education</a></li>
-                <li><a href="#">experience</a></li>
+                <li><a href="/experiences page/experiences.html">experience</a></li>
                 <li><a href="#"><i class="fab fa-github"></i></a></li>
                 <li><a href="https://www.linkedin.com/in/ananta-deva-a04a6827b" target="_blank"><i class="fab fa-linkedin"></i></a></li>
                 <li><a href="https://www.instagram.com/admiralanant/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
@@ -27,37 +28,37 @@
     </header>
 
     <section class="intro">
-        <div class="intro-text">
+        <div class="intro-text" data-aos="fade-right" data-aos-duration="1200" data-aos-anchor-placement="center-bottom">
             <h1>Hello, I'm Deva</h1>
             <p>I’m a  <span class="highlight-text">Front-End Design Engineer</span> and <span class="highlight-text">Data Scientist</span> with a passion for crafting visually stunning websites and insightful data visualizations. Dive into my portfolio to explore innovative design and data solutions tailored for tomorrow's tech leaders. Let’s create something remarkable together!</p>
-            <a href="#" class="intro-button">Download CV</a>
-            <a href="#" class="intro-xp">See experiences</a>
+            <a href="#" class="intro-button" data-aos="fade-up">Download CV</a>
+            <a href="#" class="intro-xp" data-aos="fade-up">See experiences</a>
         </div>
-        <div class="intro-photo">
+        <div class="intro-photo" data-aos="fade-left" data-aos-duration="1200" data-aos-anchor-placement="center-bottom">
             <img src="./assets/images/main.jpg" alt="Alex's photo" class="intro-profile">
         </div>
     </section>
 
     <section id="skills">
-        <div class="experience">
-            <p># years of</p>
+        <div class="experience" data-aos="fade-up">
+            <p>2 years of</p>
             <span class="xp-text"><strong>XP</strong></span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ipsam expedita.</p>
+            <p>Crafting responsive web applications and analyzing data to create impactful solutions that drive business growth.</p>
         </div>
         <div class="skills-carousel">
-            <div class="skill-card js" style="background-color: #C3C99E;">
+            <div class="skill-card js" data-aos="zoom-in" data-aos-delay="100" style="background-color: #C3C99E;">
                 <i class="fab fa-js" style="color: #1a1a1a;"></i>
                 <p style="color: #1a1a1a;">JavaScript</p>
             </div>
-            <div class="skill-card figma" style="background-color: #7D9CA5;">
+            <div class="skill-card figma" data-aos="zoom-in" data-aos-delay="200" style="background-color: #7D9CA5;">
                 <i class="fa-brands fa-figma" style="color: #1a1a1a;"></i>
                 <p style="color: #1a1a1a;">Figma</p>
             </div>
-            <div class="skill-card python" style="background-color: #C2C2C2;">
+            <div class="skill-card python" data-aos="zoom-in" data-aos-delay="300" style="background-color: #C2C2C2;">
                 <i class="fab fa-python" style="color: #1a1a1a;"></i>
                 <p style="color: #1a1a1a;">Python</p>
             </div>
-            <div class="skill-card MongoDB" style="background-color: #afffa9;">
+            <div class="skill-card MongoDB" data-aos="zoom-in" data-aos-delay="400" style="background-color: #afffa9;">
                 <i class="fas fa-database" style="color: #1a1a1a;"></i>
                 <p style="color: #1a1a1a;">MongoDB</p>
             </div>
@@ -65,15 +66,15 @@
     </section>
 
     <section class="keywords">
-        <p>JavaScript</p>
-        <p class="figma" style="color: #9F53FF;">Figma</p>
-        <p class="python" style="color: #6104D6;">Python</p>
-        <p class="database" style="color: #370079;">MongoDB</p>
+        <p data-aos="fade-up" data-aos-delay="100">JavaScript</p>
+        <p class="figma"  data-aos="fade-up" data-aos-delay="200" style="color: #9F53FF;">Figma</p>
+        <p class="python" data-aos="fade-up" data-aos-delay="300" style="color: #6104D6;">Python</p>
+        <p class="database" data-aos="fade-up" data-aos-delay="350" style="color: #370079;">MongoDB</p>
     </section>
 
-    <section class="technologies">
-        <h1 class="tech-title">These are the technologies I've been using</h1>
-        <div class="tech-cards">
+    <section class="technologies" >
+        <h1 class="tech-title" data-aos="zoom-in" data-aos-delay="100">These are the technologies I've been using</h1>
+        <div class="tech-cards" data-aos-duration="1100" data-aos="fade-in" data-aos-delay="200">
             <div class="card">
                 <h2>Data Science</h2>
                 <ul>
@@ -88,8 +89,7 @@
                     <li><i class="fa-brands fa-html5"></i>Html</li>
                     <li><i class="fa-brands fa-css3-alt"></i>CSS</li>
                     <li><i class="fab fa-react"></i> React JS</li>
-                    <li><i class="fab fa-react"></i> React Native</li>
-                    <li><i class="fas fa-layer-group"></i> NextJS</li>
+                    <li><i class="fab fa-js"></i> Javascript</li>
                     <li><i class="fa-brands fa-figma"></i> Figma</li>
                 </ul>
             </div>
@@ -98,7 +98,6 @@
                 <ul>
                     <li><i class="fab fa-python"></i> Python</li>
                     <li><i class="fab fa-js"></i> Javascript</li>
-                    <li><i class="fas fa-code"></i> Typescript</li>
                 </ul>
             </div>
             <div class="card">
@@ -115,7 +114,7 @@
                 </ul>
             </div>
         </div>
-        <footer class="footer">
+        <footer class="footer" data-aos="fade-in" data-aos-delay="220">
             <p>Follow me</p>
             <div class="social-icons">
                 <a href="#"><i class="fab fa-github"></i></a>
@@ -126,6 +125,17 @@
         </footer>
     </section>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: false,
+            mirror: true,
+            offset: 80,
+            anchorPlacement: 'top-bottom' 
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

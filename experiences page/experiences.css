@@ -32,7 +32,6 @@ a:hover {
     transition: all 0.3s ease-in-out;
 }
 
-/* Header and Navigation */
 header {
     padding: 20px 0;
     background-color: none;
@@ -111,93 +110,37 @@ header nav {
     border-radius: 2px;
 }
 
-/*main elements*/
+@keyframes spin{
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
 
+/* Main Content */
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.intro-text-section {
+    text-align: center;
+    margin: 0 auto 50px;
+    max-width: 800px;
     padding: 20px;
 }
 
-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 50px;
+.intro-text {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    color: #ffffff;
 }
 
-.education-item {
-    background-color: #0f0f0f;
-    padding: 20px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    transform: scale(1);
-}
-
-.education-item::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -150%;
-    width: 20%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        var(--clr-shine),
-        transparent
-    );
-    transition: all 0.6s ease-in-out;
-    transform: skewX(-20deg);
-    opacity: 0;
-}
-
-.education-item:hover::before {
-    animation: shine 2s ease-in-out;
-    opacity: 1;
-}
-
-.education-item:hover {
-    transform: scale(1.05); /* Zoom effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
-}
-
-.certificate-image {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    max-width: 100%;
-    margin-top: 10px;
-    border-radius: 10px;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out; /* Transition for fade */
-}
-
-.certificate-image img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-.certificate-image.fade-in {
-    display: block;
-    opacity: 1;
-}
-
-.certificate-image.fade-out {
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-}
-
-.unview-btn {
+.intro-button {
     display: inline-block;
-    left: 37%;
     font-family: 'Nunito', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
@@ -211,12 +154,9 @@ section {
     box-shadow: inset 0 0 0.3em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
 
     position: relative;
-    margin-top: 10px; /* Optional: adjust spacing */
-    text-align: center;
-    text-decoration: none; /* Remove underline for anchor tag */
 }
 
-.unview-btn::before {
+.intro-button::before {
     pointer-events: none;
     content: "";
     position: absolute;
@@ -231,7 +171,7 @@ section {
     opacity: 0.5;
 }
 
-.unview-btn::after {
+.intro-button::after {
     content: '';
     position: absolute;
     top: 0;
@@ -246,49 +186,74 @@ section {
     transition: opacity 150ms linear;
 }
 
-.unview-btn:hover,
-.unview-btn:focus {
+.intro-button:hover, .intro-button:focus {
     color: var(--clr-bg);
     text-shadow: 0 0 1em hsl(258, 100%, 87%);
 }
 
-.unview-btn:hover::before,
-.unview-btn:focus::before {
+.intro-button:hover::before, .intro-button:focus::before {
     opacity: 0.8;
 }
 
-.unview-btn:hover::after,
-.unview-btn:focus::after {
+.intro-button:hover::after, .intro-button:focus::after{
     opacity: 0.8;
 }
 
-.education-item h3 {
-    margin-bottom: 5px;
+.experience-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.experience-item {
+    background-color: #131313;
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+    transition: transform 0.3s ease;
+    border: 1px solid var(--clr-shine);
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+}
+
+.experience-header {
+    margin-bottom: 20px;
+}
+
+.experience-header h3 {
     font-size: 24px;
-}
-
-.education-item p {
+    font-weight: 600;
+    color: var(--clr-neon);
     margin-bottom: 5px;
-    color: #a3a3a3;
 }
 
-.certificate-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+.company-name {
+    font-size: 18px;
+    color: #888;
 }
 
-.education-item:hover .certificate-link {
-    opacity: 1;
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/*footer elements*/
+.experience-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-info {
+    display: flex;
+    gap: 20px;
+    color: #888;
+    font-size: 14px;
+}
+
+/* Footer */
 
 .bottom {
     padding: 40px;
@@ -340,75 +305,38 @@ section {
     transition: width 0.3s ease 0s;
 }
 
-@keyframes spin{
-    from {
-        --angle: 0deg;
-    }
-    to {
-        --angle: 360deg;
-    }
-}
-
-@keyframes shine {
-    0% {
-        left: -150%;
-    }
-    50% {
-        left: 100%;
-    }
-    100% {
-        left: -150%;
-    }
-}
-
-@media (max-width: 1280px) {
-    .footer {
-        padding: 15px;
-    }
-
-    .social-icons {
-        padding-left: 0;
-        gap: 15px;
-    }
-
-    .footer p {
-        margin-top: 10px;
-    }
-}
-
-@media (max-width: 1024px) {
+/* Responsive Design */
+@media (max-width: 768px) {
     .navbar {
-        padding: 10px 15px;
+        padding: 8px 15px;
         gap: 15px;
     }
 
     .navbar li a {
         font-size: 1em;
-        padding: 12px;
+        padding: 8px;
     }
 
-    .container {
-        max-width: 85%;
+    .experience-item {
+        padding: 20px;
     }
 
-    .education-item h3 {
-        font-size: 22px;
+    .experience-header h3 {
+        font-size: 20px;
     }
+
+    .company-name {
+        font-size: 16px;
+    }
+
     .footer {
-        padding: 15px;
-    }
-
-    .social-icons a {
-        font-size: 18px;
-    }
-
-    .footer p {
-        font-size: 14px;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
     }
 }
 
-@media (max-width: 640px) {
-
+@media (max-width: 480px) {
     .navbar {
         padding: 5px 10px;
         gap: 10px;
@@ -416,95 +344,27 @@ section {
 
     .navbar li a {
         font-size: 0.8em;
-        padding: 8px;
-    }
-
-    .container {
-        max-width: 95%;
-    }
-
-    .education-item {
-        padding: 15px;
-    }
-
-    .education-item h3 {
-        font-size: 20px;
-    }
-
-    .certificate-image img {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .certificate-link {
-        font-size: 14px;
-    }
-
-    .unview-btn {
-        font-size: 12px;
-    }
-
-    .footer {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .social-icons a {
-        font-size: 16px;
-    }
-
-    .footer p {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        justify-content: flex-start;
-        padding: 5px;
-    }
-
-    .navbar li a {
-        font-size: 0.7em;
         padding: 6px;
     }
 
-    .education-item {
-        text-align: center;
-        padding: 10px;
+    .experience-item {
+        padding: 15px;
     }
 
-    .education-item h3 {
+    .experience-header h3 {
         font-size: 18px;
     }
 
-    .certificate-link {
-        position: static;
-        transform: none;
-        margin-top: 10px;
-    }
-
-    .unview-btn {
-        left: 0%;
-    }
-
-    .footer {
-        padding: 10px;
+    .contact-info {
         flex-direction: column;
-        align-items: center;
+        gap: 5px;
     }
 
     .social-icons {
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .footer p {
-        margin-top: 10px;
-        font-size: 12px;
+        gap: 15px;
     }
 
     .social-icons a {
-        font-size: 14px;
+        font-size: 18px;
     }
 }
