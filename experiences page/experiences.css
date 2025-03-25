@@ -126,6 +126,11 @@ header nav {
     padding: 40px 20px;
 }
 
+.text-container {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
 .intro-text-section {
     text-align: center;
     margin: 0 auto 50px;
@@ -136,7 +141,13 @@ header nav {
 .intro-text {
     font-size: 1.2em;
     margin-bottom: 25px;
+    color: #6F6F6F;
+}
+
+.highlight-text {
+    font-weight: 500;
     color: #ffffff;
+    text-shadow: 0 0 0.2em hsl(0 0 100%);
 }
 
 .intro-button {
